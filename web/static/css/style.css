@@ -1,0 +1,89 @@
+/* Custom style variables and styling */
+
+/* Glassmorphism styling */
+.glass-card {
+    background: rgba(13, 17, 28, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 12px;
+}
+
+/* Custom Scrollbar for list scroll */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.25);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+}
+
+/* Alert log slide in animation */
+@keyframes alertSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.alert-entry {
+    animation: alertSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Packet table row hover & flash */
+@keyframes rowFlash {
+    0% {
+        background-color: rgba(99, 102, 241, 0.15);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.packet-row {
+    animation: rowFlash 0.6s ease-out;
+}
+
+/* Alarm glowing pulse animations */
+@keyframes dangerGlow {
+    0%, 100% {
+        border-color: rgba(239, 68, 68, 0.2);
+        box-shadow: 0 0 5px rgba(239, 68, 68, 0.1);
+    }
+    50% {
+        border-color: rgba(239, 68, 68, 0.7);
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+    }
+}
+
+.danger-glow-pulse {
+    animation: dangerGlow 2s infinite ease-in-out;
+}
+
+/* Scroll physics */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Card interactions */
+.glass-card:hover {
+    box-shadow: 0 10px 40px 0 rgba(99, 102, 241, 0.08);
+}
